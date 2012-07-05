@@ -39,6 +39,7 @@ import net.milkbowl.vault.economy.plugins.Economy_3co;
 import net.milkbowl.vault.economy.plugins.Economy_AEco;
 import net.milkbowl.vault.economy.plugins.Economy_BOSE6;
 import net.milkbowl.vault.economy.plugins.Economy_BOSE7;
+import net.milkbowl.vault.economy.plugins.Economy_Civ;
 import net.milkbowl.vault.economy.plugins.Economy_Craftconomy;
 import net.milkbowl.vault.economy.plugins.Economy_CurrencyCore;
 import net.milkbowl.vault.economy.plugins.Economy_EconXP;
@@ -188,6 +189,9 @@ public class Vault extends JavaPlugin {
      * Attempts to load Economy Addons
      */
     private void loadEconomy() {
+    	// Try to load MultiCurrency
+        hookEconomy("Civileconation", Economy_Civ.class, ServicePriority.Normal, "net.croxis.plugins.civileconation.Civileconation");
+    	
         // Try to load MultiCurrency
         hookEconomy("MultiCurrency", Economy_MultiCurrency.class, ServicePriority.Normal, "me.ashtheking.currency.Currency", "me.ashtheking.currency.CurrencyList");
 
